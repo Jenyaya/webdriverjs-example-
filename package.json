@@ -3,7 +3,10 @@
         "webdriverjs": "*",
         "mocha": "*",
         "chai": "*",
-        "selenium-standalone": "*"
+        "selenium-standalone": "*",
+        "httptest" : "*",
+        "should" : "*",
+        "supertest" : "*"
 
     }
 }
