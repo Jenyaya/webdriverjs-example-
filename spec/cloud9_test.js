@@ -78,12 +78,45 @@ describe('Cloud9 test', function () {
             })
 
             .getUrl('a custom variable', function (err, result) {
-                assert.equal(null, err)
-                assert.strictEqual(result.url, 'http://172.22.194.48:8079/#/home');
+                expect(err).to.be.null;
+                expect(result.url).equal('http://172.22.194.48:8079/#/home');
 
             })
 
             .call(done);
+    });
+
+    it('Browse tabs', function (done) {
+        client
+
+            .click("//li[contains(text(),'Project')]", function (err, result) {
+                expect(err).to.be.null;
+            })
+
+            .getUrl('a custom variable', function (err, result) {
+                expect(err).to.be.null;
+                expect(result.url).equal('http://172.22.194.48:8079/#/project');
+
+            })
+
+            .getText('span[data-bind="text: name"]', function (err, result) {
+                expect(err).to.be.null;
+                expect(result).equal('Metadata')
+            })
+
+            .click('span[data-bind="text: name"]', function (err, result) {
+                expect(err).to.be.null;
+            })
+
+            //.waitFor("div[class='project-participants_mode']", 5000, function(err, result){expect(err).to.be.null;})
+
+            .getText('div[class="project-participants_mode"]', function (err, result) {
+                expect(err).to.be.null;
+                expect(result).equal('Participants')
+            })
+
+            .call(done)
+
     });
 
 

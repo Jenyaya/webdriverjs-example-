@@ -1,0 +1,9 @@
+{
+    "dependencies": {
+        "webdriverjs": "*",
+        "mocha": "*",
+        "chai": "*",
+        "selenium-standalone": "*"
+
+    }
+}
