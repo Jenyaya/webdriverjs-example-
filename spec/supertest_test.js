@@ -49,8 +49,11 @@ describe('Super test example', function () {
 
                     console.log(key + ' : ' + res.body[0][key]);
                     res.body[0].should.have.property(key);
+
                 }
 
+                res.body[0].id.should.be.equal('d3cad8ec-98b9-455f-85e9-484c98eaad80')
+                res.body[0].owner_id.should.be.equal('ef80120c-d19b-4feb-bdc2-effd8611c7b1')
                 done();
 
             });
